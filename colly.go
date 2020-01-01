@@ -965,9 +965,9 @@ func (c *Collector) handleOnResponse(r *Response) {
 }
 
 func (c *Collector) handleOnHTML(resp *Response) error {
-	if len(c.htmlCallbacks) == 0 || !strings.Contains(strings.ToLower(resp.Headers.Get("Content-Type")), "html") {
-		return nil
-	}
+	// if len(c.htmlCallbacks) == 0 || !strings.Contains(strings.ToLower(resp.Headers.Get("Content-Type")), "html") {
+	// 	return nil
+	// }
 	doc, err := goquery.NewDocumentFromReader(bytes.NewBuffer(resp.Body))
 	if err != nil {
 		return err
